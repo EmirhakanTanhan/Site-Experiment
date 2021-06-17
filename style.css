@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
+
+/* ===============
+    GLOBAL STYLES
+   ===============*/
+
+:root {
+    --secondary-clr: #f7f7f7;
+    --info-clr: #999;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    font-size: 16px;
+}
+
+h1 {
+    font-family: 'EB Garamond', serif;
+    font-weight: normal;
+}
+
+/* ===============
+    HOME PAGE STYLES
+   ===============*/
+
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page h1 {
+
+}
+
+/* ===============
+    SLIDER COMPONENT STYLES
+   ===============*/
+
+.slider {
+    display: flex;
+    margin: 4rem 0;
+    line-height: 1.2rem;
+}
+
+.slider-item {
+    width: 14rem;
+    height: 24rem;
+    background-color: var(--secondary-clr);
+    margin: 0 1rem;
+}
+
+.slider-item .img {
+    height: 12rem;
+}
+
+.slider-item .content {
+    display: grid;
+    grid-template-rows: 4rem 3rem 1.5rem;
+    height: 10rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.slider-item .content h2 {
+    font-size: .9rem;
+}
+
+.slider-item .content .pills {
+    font-size: .75rem;
+    color: var(--info-clr);
+}
+
+.slider-item .content .price {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-right: .5rem;
+}
+
+.slider-item .content .price:after {
+    content: ' € *';
+}
+
+.slider-item .content .old_price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--info-clr);
+    text-decoration: line-through;
+}
+
+.slider-item .content .old_price:after {
+    content: ' € *';
+}
+
+.slider-item .content .info {
+    font-size: .7rem;
+    color: var(--info-clr);
+    margin-bottom: 0;
+}
