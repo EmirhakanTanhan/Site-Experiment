@@ -26,7 +26,7 @@ h1 {
    ===============*/
 
 .page {
-    max-width: 900px;
+    max-width: 1300px;
     margin: 0 auto;
     text-align: center;
 }
@@ -41,6 +41,7 @@ h1 {
 
 .slider {
     display: flex;
+    justify-content: center;
     margin: 4rem 0;
     line-height: 1.2rem;
 }
@@ -53,15 +54,57 @@ h1 {
 }
 
 .slider-item .img {
-    height: 12rem;
+    height: 11rem;
+    padding-top: 1rem;
+}
+
+.slider-item .img-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.slider-item .img-info span {
+    width: 2.5rem;
+    height: 1.5rem;
+    margin-bottom: .2rem;
+    text-align: center;
+    padding: 4px 2px 0 2px;
+}
+
+.slider-item .img-info .discount {
+    background-color: #d61d1d;
+    color: #fff;
+}
+.slider-item .img-info .likes {
+    background-color: var(--secondary-clr);
+    color: #d61d1d;
+}
+.slider-item .img-info .likes:before {
+    content: '\2661';
+    font-size: 1.3rem;
+}
+.slider-item .img-info .isNew {
+    background-color: #303030;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.slider-item .img img {
+    height: inherit;
+    mix-blend-mode: multiply;
 }
 
 .slider-item .content {
     display: grid;
-    grid-template-rows: 4rem 3rem 1.5rem;
-    height: 10rem;
-    padding: 1rem;
+    grid-template-rows: 43% 27% 19%;
+    height: 11rem;
+    padding: 0 1rem 1rem 1rem;
     text-align: center;
+}
+
+.slider-item .content a {
+    text-decoration: none;
+    color: #000;
 }
 
 .slider-item .content h2 {
