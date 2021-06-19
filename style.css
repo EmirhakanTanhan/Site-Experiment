@@ -120,7 +120,6 @@ h1 {
 .slider-item .content .price {
     font-size: 1rem;
     font-weight: bold;
-    padding-right: .5rem;
 }
 
 .slider-item .content .price:after {
@@ -132,6 +131,7 @@ h1 {
     font-weight: bold;
     color: var(--info-clr);
     text-decoration: line-through;
+    padding-left: .5rem;
 }
 
 .slider-item .content .old_price:after {

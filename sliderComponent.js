@@ -1,6 +1,6 @@
 document.querySelectorAll('[role="_slider"]').forEach(function (element) {
     const ID = element.getAttribute('id');
-    slider = document.getElementById(ID);
+    const slider = document.getElementById(ID);
     const range = slider.getAttribute('range');
     const range_start = range.split('-')[0]
     const range_end = range.split('-')[1]
@@ -17,7 +17,6 @@ document.querySelectorAll('[role="_slider"]').forEach(function (element) {
         perpage = 5;
         width = '1185px'
     }
-
 
     fetchItem(url)
         .then(data => {
@@ -97,5 +96,4 @@ document.querySelectorAll('[role="_slider"]').forEach(function (element) {
                 width: width,
             }).mount();
         });
-
 });
