@@ -4,8 +4,7 @@ const fetchItem = async (url) => {
             method: 'GET',
             credentials: 'same-origin'
         });
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
         console.error(error);
     }

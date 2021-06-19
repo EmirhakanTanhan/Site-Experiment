@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Segmentify Project</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="splide/splide.min.css">
-    <script src="splide/splide.min.js"></script>
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="splide/splide-sea-green.min.css">
+
+    <script src="server.js"></script>
 </head>
 <body>
 <div class="page">
     <h1>Unsere Empfehlungen für Sie</h1>
 
-    <slider-component range="4" url="https://segmentify-json.herokuapp.com/api/products"></slider-component>
+    <div id="slider-1" role="_slider" range="0-10" url="https://segmentify-json.herokuapp.com/api/products"></div>
 
+    <div id="slider-2" role="_slider" range="10-20" url="https://segmentify-json.herokuapp.com/api/products"></div>
+
+    <div id="slider-3" role="_slider" range="20-30" url="https://segmentify-json.herokuapp.com/api/products"></div>
 </div>
 
 
-
+<script src="splide/splide.min.js"></script>
 <script src="sliderComponent.js"></script>
 
-<script>
-    document.addEventListener( 'DOMContentLoaded', function () {
-        new Splide( '#myslider' ).mount();
-    } );
-</script>
 </body>
 </html>
