@@ -1,5 +1,5 @@
-document.querySelectorAll('[role="_slider"]').forEach(function (element) {
-    const ID = element.getAttribute('id');
+document.querySelectorAll('[role="_slider"]').forEach(function (element) {  //Going through every _slider role item
+    const ID = element.getAttribute('id');                                               //and registering their id's
     const slider = document.getElementById(ID);
     const range = slider.getAttribute('range');
     const range_start = range.split('-')[0]
@@ -7,7 +7,7 @@ document.querySelectorAll('[role="_slider"]').forEach(function (element) {
     const url = slider.getAttribute('url');
     let perpage, width;
 
-    if (window.innerWidth < 1300) {
+    if (window.innerWidth < 1300) { //settings for responsive design
         perpage = (window.innerWidth / 300).toFixed(0);
         width = '100%';
     } else if (window.innerWidth < 400) {
@@ -18,9 +18,10 @@ document.querySelectorAll('[role="_slider"]').forEach(function (element) {
         width = '1185px'
     }
 
-    fetchItem(url)
+    fetchItem(url) //Fetching data from the given url
         .then(data => {
-            document.getElementById(ID).innerHTML = `   <!--  slider.innerHTML = \`  -->
+
+            document.getElementById(ID).innerHTML = `   <!-- Slider component template -->
             <div id="splide-${ID}" class="slider splide">
             <div class="splide__arrow"></div>
                 <div class="splide__track">
@@ -35,7 +36,7 @@ document.querySelectorAll('[role="_slider"]').forEach(function (element) {
                     isNew = "";
                 if (item.params.land && item.params.region) spanLandRegion = " | ";
                 if (item.params.region && item.params.art) spanRegionArt = " | ";
-                if (item.params.likeCount) likeCount = `<span class="likes">3</span>`;
+                if (item.params.likeCount) likeCount = `<span class="likes">${item.params.likeCount}</span>`;
                 if (item.params.isNew) isNew = `<span class="isNew">NEU</span>`;
                 if (item.oldPrice) {
                     oldPrice = `<span class="old_price">${item.oldPrice.toFixed(2)}</span>`;
@@ -46,7 +47,7 @@ document.querySelectorAll('[role="_slider"]').forEach(function (element) {
                 }
 
                 return `
-                <div class="slider-item splide__slide">
+                <div class="slider-item splide__slide"> <!-- Slider item template -->
                     <a href="${item.url}">
                         <div class="img">
                             <div class="img-info">
@@ -85,7 +86,8 @@ document.querySelectorAll('[role="_slider"]').forEach(function (element) {
                 `;
         })
         .then(function () {
-            new Splide(`#splide-${ID}`, {
+
+            new Splide(`#splide-${ID}`, { //Rendering the slider component
                 type: 'slide',
                 rewind: true,
                 perPage: perpage,
